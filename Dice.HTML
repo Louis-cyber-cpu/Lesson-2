@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Document</title>
+
+<style>
+
+#dice {
+
+font-size: 300px;
+
+}
+
+#dice:hover {
+
+cursor: pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="dice" onclick="stopstart()">
+
+<script>
+
+var dice;
+
+var dices = ['&#9856;', '&#9857;', '&#9858;', '&#9859;', '&#9860;', '&#9861;' ];
+
+var stop = true
+
+var time;
+
+
+function change() {
+
+var random = Math.floor(Math.random()*6)
+
+dice.innerHTML = dices[random]
+
+}
+
+function stopstart() {
+
+if(stop) {
+
+stop = false
+
+time = setInterval(change, 100)
+
+}
+
+else {
+
+clearInterval(time)
+
+stop = true
+
+}
+
+}
+
+window.onload = function() {
+
+dice = document.getElementById("dice")
+
+stopstart()
+
+}
+
+</script>
+
+</div>
+
+</body>
+</html>
